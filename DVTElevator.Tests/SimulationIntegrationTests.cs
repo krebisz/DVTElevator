@@ -1,10 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DVTElevator.Application;
+using DVTElevator.Domain;
+using DVTElevator.UI;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DVTElevator.Tests
 {

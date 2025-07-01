@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.UI", "..\DVTElevator.UI\DVTElevator.UI.csproj", "{73A3FF72-FA33-4C11-B796-2FCED560729F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.UI", "DVTElevator.UI\DVTElevator.UI.csproj", "{73A3FF72-FA33-4C11-B796-2FCED560729F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.Application", "..\DVTElevator.Application\DVTElevator.Application.csproj", "{BB162768-CDF1-40D6-BD65-FE558210F122}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.Application", "DVTElevator.Application\DVTElevator.Application.csproj", "{BB162768-CDF1-40D6-BD65-FE558210F122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.Domain", "..\DVTElevator.Domain\DVTElevator.Domain.csproj", "{D2F9D27A-633B-4FAC-A5F5-8EDC0349A019}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.Domain", "DVTElevator.Domain\DVTElevator.Domain.csproj", "{D2F9D27A-633B-4FAC-A5F5-8EDC0349A019}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.Infrastructure", "..\DVTElevator.Infrastructure\DVTElevator.Infrastructure.csproj", "{AF757BA9-FEDB-4CC7-93E0-71ACAB34CF2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.Infrastructure", "DVTElevator.Infrastructure\DVTElevator.Infrastructure.csproj", "{AF757BA9-FEDB-4CC7-93E0-71ACAB34CF2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVTElevator.Tests", "DVTElevator.Tests\DVTElevator.Tests.csproj", "{2F45FD91-FAFC-41B2-BD60-489A18A73170}"
 EndProject

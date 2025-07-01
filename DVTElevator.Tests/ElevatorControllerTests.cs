@@ -3,6 +3,8 @@ using Moq;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
+using DVTElevator.Infrastructure;
+using DVTElevator.Domain;
 
 namespace DVTElevator.Tests
 {

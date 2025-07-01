@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DVTElevator.Application\DVTElevator.Application.csproj" />
-    <ProjectReference Include="..\..\DVTElevator.Domain\DVTElevator.Domain.csproj" />
-    <ProjectReference Include="..\..\DVTElevator.Infrastructure\DVTElevator.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\DVTElevator.UI\DVTElevator.UI.csproj" />
+    <ProjectReference Include="..\DVTElevator.Application\DVTElevator.Application.csproj" />
+    <ProjectReference Include="..\DVTElevator.Domain\DVTElevator.Domain.csproj" />
+    <ProjectReference Include="..\DVTElevator.Infrastructure\DVTElevator.Infrastructure.csproj" />
+    <ProjectReference Include="..\DVTElevator.UI\DVTElevator.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
