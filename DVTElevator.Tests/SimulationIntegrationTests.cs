@@ -28,7 +28,7 @@ namespace DVTElevator.Tests
 
             var services = new ServiceCollection();
 
-            // Register settings, console service, controller, etc.
+            //Register Settings, Console Service, Controller, etc.
             Startup.ConfigureServices(services, config);
 
 

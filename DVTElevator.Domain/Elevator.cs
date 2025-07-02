@@ -57,6 +57,10 @@ namespace DVTElevator
             PassengerFloor = floor;
         }
 
+
+        /// <summary>
+        /// The Main Step Function for the Elevator. It simulates a Tick or a singular Movement between Floors for an Elevator in motion.
+        /// </summary>
         public void Step()
         {
             if (IsMoving)

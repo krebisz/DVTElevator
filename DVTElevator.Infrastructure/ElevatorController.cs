@@ -18,10 +18,7 @@ namespace DVTElevator.Infrastructure
 
         public ElevatorDispatchResult RequestElevator(int passengerFloor, int destinationFloor, int passengers)
         {
-            var elevator = _elevators
-                .Where(e => !e.IsMoving && e.PassengerCount + passengers <= e.Capacity)
-                .OrderBy(e => Math.Abs(e.CurrentFloor - passengerFloor))
-                .FirstOrDefault();
+            var elevator = _elevators.Where(e => !e.IsMoving && e.PassengerCount + passengers <= e.Capacity).OrderBy(e => Math.Abs(e.CurrentFloor - passengerFloor)).FirstOrDefault();
 
             if (elevator == null)
             {
