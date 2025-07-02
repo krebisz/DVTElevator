@@ -1,4 +1,4 @@
-name: DVTElevator-ci-pipeline
+name: DVTElevator-ci-pipeline (Master)
 
 on:
   push:
