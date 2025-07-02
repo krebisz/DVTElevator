@@ -1,4 +1,4 @@
-name: DVTElevator-ci-pipeline (Master)
+﻿name: DVTElevator-ci-pipeline (Master)
 
 on:
   push:
@@ -30,3 +30,10 @@ jobs:
 
       - name: Run unit and integration tests
         run: dotnet test DVTElevator.sln --no-build --configuration Release --verbosity normal --logger:"console;verbosity=detailed"
+
+
+      - name: Run tests and write summary
+        run: |
+            echo "### ✅ Test Results" >> $GITHUB_STEP_SUMMARY
+            dotnet test DVTElevator.sln --no-build --configuration Release --verbosity minimal >> $GITHUB_STEP_SUMMARY
+
