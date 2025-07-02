@@ -39,7 +39,7 @@ namespace DVTElevator
         {
             if (PassengerCount + count > Capacity)
             {
-                throw new InvalidOperationException("Elevator overloaded.");
+                throw new InvalidOperationException("Elevator Full.");
             }
 
             PassengerCount += count;
