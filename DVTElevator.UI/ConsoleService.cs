@@ -32,7 +32,7 @@ namespace DVTElevator.UI
             }
         }
 
-        public void ShowElevatorStatus(List<ElevatorStatus> statuses = null)
+        public void ShowElevatorStatus(List<ElevatorStatus>? statuses = null)
         {
             try
             {
