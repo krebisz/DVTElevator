@@ -1,4 +1,4 @@
-name: dotnet-ci-pipeline
+name: DVTElevator-ci-pipeline
 
 on:
   push:
