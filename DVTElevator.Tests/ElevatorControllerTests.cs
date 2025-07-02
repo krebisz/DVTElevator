@@ -53,7 +53,7 @@ namespace DVTElevator.Tests
 
             //Assert
             result.IsSuccess.Should().BeFalse();
-            result.Message.Should().Be("Failed: No available elevators.");
+            result.Message.Should().Be("Failed: No Available Elevators.");
         }
 
         [Fact]
