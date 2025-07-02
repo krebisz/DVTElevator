@@ -27,12 +27,12 @@ jobs:
       - name: Build solution
         run: dotnet build DVTElevator.sln --no-restore --configuration Release
 
-      - name: Run unit and integration tests
-        run: dotnet test DVTElevator.sln --no-build --configuration Release --verbosity normal --logger:"console;verbosity=detailed"
+      - name: ✅ Run unit + integration tests with coverage
+        run: dotnet test DVTElevator.sln --no-build --configuration Release --collect:"XPlat Code Coverage"
 
-
-      - name: Run tests and write summary
-        run: |
-            echo "### ✅ Test Results" >> $GITHUB_STEP_SUMMARY
-            dotnet test DVTElevator.sln --no-build --configuration Release --verbosity minimal >> $GITHUB_STEP_SUMMARY
-
+      - name: 📊 Report code coverage summary
+        uses: danielpalme/ReportGenerator-GitHub-Action@5
+        with:
+          reports: '**/coverage.cobertura.xml'
+          targetdir: 'coverage-report'
+          reporttypes: 'MarkdownSummary'
