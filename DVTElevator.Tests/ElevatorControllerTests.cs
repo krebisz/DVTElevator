@@ -1,10 +1,7 @@
-﻿using Xunit;
-using Moq;
-using FluentAssertions;
-using System;
-using System.Collections.Generic;
+﻿using DVTElevator.Domain;
 using DVTElevator.Infrastructure;
-using DVTElevator.Domain;
+using FluentAssertions;
+using Moq;
 
 namespace DVTElevator.Tests
 {
