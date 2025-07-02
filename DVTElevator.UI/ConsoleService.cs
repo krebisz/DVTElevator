@@ -79,51 +79,6 @@ namespace DVTElevator.UI
             }
         }
 
-        //public int ReadCurrentFloorNumber(int min, int max)
-        //{
-        //    try
-        //    {
-        //        Console.Write("Enter current floor number: ");
-
-        //        if (int.TryParse(Console.ReadLine(), out int floor) && floor >= min && floor <= max)
-        //        {
-        //            return floor;
-        //        }
-
-        //        Console.WriteLine("Invalid floor. Try again.");
-        //        return ReadCurrentFloorNumber(min, max);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "Error while reading current floor number.");
-        //        Console.WriteLine("Error reading input. Try again.");
-        //        return ReadCurrentFloorNumber(min, max);
-        //    }
-        //}
-
-        //public int ReadDestinationFloorNumber(int min, int max)
-        //{
-        //    try
-        //    {
-        //        Console.Write("Enter destination floor: ");
-
-        //        if (int.TryParse(Console.ReadLine(), out int floor) && floor >= min && floor <= max)
-        //        {
-        //            return floor;
-        //        }
-
-        //        Console.WriteLine("Invalid floor. Try again.");
-        //        return ReadDestinationFloorNumber(min, max);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "Error while reading destination floor.");
-        //        Console.WriteLine("Error reading input. Try again.");
-        //        return ReadDestinationFloorNumber(min, max);
-        //    }
-        //}
-
-
         public int ReadFloorNumber(int min, int max, bool isDropOff)
         {
             string floorType = isDropOff ? "Destination" : "Passenger";
@@ -148,9 +103,6 @@ namespace DVTElevator.UI
                 return ReadFloorNumber(min, max, isDropOff);
             }
         }
-
-
-
 
         public int ReadChoice(int min, int max)
         {
