@@ -2,6 +2,9 @@
 
 namespace DVTElevator.UI
 {
+    /// <summary>
+    /// This sets the boundaries on the input parameters that are accepted from the user.
+    /// </summary>
     public class Settings : ISettings
     {
         public int MinFloor { get; set; } = 1;

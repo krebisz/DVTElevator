@@ -2,6 +2,9 @@
 
 namespace DVTElevator
 {
+    /// <summary>
+    /// The Main Elevator Object.
+    /// </summary>
     public class Elevator : IElevator
     {
         public int Id { get; set; }

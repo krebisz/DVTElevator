@@ -2,6 +2,9 @@
 
 namespace DVTElevator.Infrastructure
 {
+    /// <summary>
+    /// Handles the Main Cases made in the Menu from the UI Layer, involving Elevator Operations like Elevator dispatching and Status displays.
+    /// </summary>
     public class ElevatorController : IElevatorController
     {
         private List<IElevator> _elevators;
@@ -22,7 +25,7 @@ namespace DVTElevator.Infrastructure
 
             if (elevator == null)
             {
-                return ElevatorDispatchResult.Failure("No available elevators.");
+                return ElevatorDispatchResult.Failure("No Available Elevators.");
             }
 
             elevator.AddPassenger(passengers);

@@ -19,7 +19,7 @@ namespace DVTElevator
         void AddPassenger(int count);
         void SetDestinationFloor(int destinationFloor);
         void SetPassengerFloor(int floor);
-        void Step(); // Simulates a tick or move step
+        void Step(); // Simulates a Tick or Move Step
 
         bool HasCapacity();
     }

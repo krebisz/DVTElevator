@@ -2,6 +2,9 @@
 
 namespace DVTElevator
 {
+    /// <summary>
+    /// Represents the result of an elevator dispatch.
+    /// </summary>
     public class ElevatorDispatchResult : IElevatorDispatchResult
     {
         public bool IsSuccess { get; }

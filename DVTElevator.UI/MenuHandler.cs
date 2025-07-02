@@ -3,6 +3,10 @@ using Microsoft.Extensions.Logging;
 
 namespace DVTElevator.UI
 {
+    /// <summary>
+    /// Class MenuHandler is the main entry point for the application. The class is responsible for displaying the main menu and handling user input, and runs in a loop until the user exits the application. 
+    /// From here, the user can choose to call an elevator, view the status of elevators, or exit the application via the called upon Elevator Controller and the Console Service.
+    /// </summary>
     public class MenuHandler
     {
         private readonly IConsoleService _consoleService;
@@ -29,6 +33,9 @@ namespace DVTElevator.UI
                     _consoleService.RunMenu();
                     int choice = _consoleService.ReadChoice(_settings.MinMenuChoice, _settings.MaxMenuChoice);
 
+                    //Case 4: Can be used to simulate the movement of an elevator in real-time by creating a loop that repeatedly calls the ShowElevatorStatus method, until all elevators go idle.
+                    //        A separate, event-driven thread could be used to receive user input from the console from the simulatede movement of the elevators in order to handle both simultaneously, in real-time.
+                    //        Due to time constraints, this was not implemented. Rather a call to either status to move the elevators, or make a different menu option provides step-by-step movement of the elevators.
                     switch (choice)
                     {
                         case 1:
@@ -40,7 +47,7 @@ namespace DVTElevator.UI
                             Console.WriteLine(result.Message);
                             break;
                         case 2:
-                            _consoleService.ShowElevatorStatus();
+                            _consoleService.ShowElevatorStatuses();
                             break;
                         case 3:
                             exit = true;
@@ -56,8 +63,8 @@ namespace DVTElevator.UI
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error while processing elevator request.");
-                    Console.WriteLine("An error occurred. Please try again.");
+                    _logger.LogError(ex, "Error in MenuHandler.cs");
+                    Console.WriteLine($"An Error occurred running the menu: {ex.Message}");
                 }
             }
         }
