@@ -2,6 +2,9 @@
 
 namespace DVTElevator
 {
+    /// <summary>
+    /// A Status object for Elevators to keep track of mutable States of the Elevator, separate from the Elevator Object.
+    /// </summary>
     public class ElevatorStatus
     {
         public int Id { get; set; }

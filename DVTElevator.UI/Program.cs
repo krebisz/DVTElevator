@@ -4,6 +4,9 @@ using Microsoft.Extensions.Logging;
 
 namespace DVTElevator.UI
 {
+    /// <summary>
+    /// Services are registered in Startup.cs and injected here. The Menu Handler is the entry point to the application.
+    /// </summary>
     public class Program
     {
         static async Task Main(string[] args)
@@ -21,18 +24,14 @@ namespace DVTElevator.UI
             try
             {
                 var menuHandler = provider.GetRequiredService<MenuHandler>();
-
-                var cts = new CancellationTokenSource();
                 await menuHandler.RunAsync();
-
-                cts.Cancel(); //Stop on exit
 
                 logger.LogInformation("DVT Elevator Application Exiting...");
             }
             catch (Exception ex)
             {
-                logger.LogCritical(ex, "Unhandled exception occurred.");
-                Console.WriteLine("Fatal error. Check logs for details.");
+                logger.LogCritical(ex, "Unhandled Exception occurred in Program.cs");
+                Console.WriteLine($"Fatal Error. Check logs for details: {ex.Message}");
             }
         }
     }

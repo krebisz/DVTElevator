@@ -16,8 +16,8 @@ namespace DVTElevator.UI
 
             services.AddLogging(builder =>
             {
-                builder.AddConsole(); // Add any other providers if needed
-                builder.SetMinimumLevel(LogLevel.Information); // Or Debug/Trace
+                builder.AddConsole(); 
+                builder.SetMinimumLevel(LogLevel.Information); 
             });
 
             services.AddSingleton<ISettings, Settings>();
@@ -25,6 +25,7 @@ namespace DVTElevator.UI
             services.AddSingleton<IElevatorController, ElevatorController>();
             services.AddSingleton<MenuHandler>();
 
+            //A Config Section from the appsettings.json file is read and mapped to ElevatorConfiguration. It containes the customizable elevator configuration details.
             services.Configure<ElevatorConfiguration>(configuration.GetSection("ElevatorConfiguration"));
 
             services.AddSingleton(sp =>

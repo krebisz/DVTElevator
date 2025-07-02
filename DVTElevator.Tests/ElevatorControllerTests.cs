@@ -5,12 +5,15 @@ using Moq;
 
 namespace DVTElevator.Tests
 {
+    /// <summary>
+    /// Elevator Controller Method Tests within ElevatorController.cs
+    /// </summary>
     public class ElevatorControllerTests
     {
         [Fact]
         public void Request_UnavailableElevator_Return_Success()
         {
-            // Arrange
+            //Arrange
             var elevatorMock = new Mock<IElevator>();
             elevatorMock.SetupGet(e => e.IsMoving).Returns(false);
             elevatorMock.SetupGet(e => e.PassengerCount).Returns(0);
@@ -21,10 +24,10 @@ namespace DVTElevator.Tests
             var elevators = new List<IElevator> { elevatorMock.Object };
             var controller = new ElevatorController(elevators);
 
-            // Act
+            //Act
             var result = controller.RequestElevator(passengerFloor: 3, destinationFloor: 7, passengers: 2);
 
-            // Assert
+            //Assert
             result.IsSuccess.Should().BeTrue();
             result.ElevatorId.Should().Be(elevatorMock.Object.Id);
             elevatorMock.Verify(e => e.AddPassenger(2), Times.Once);
@@ -35,20 +38,20 @@ namespace DVTElevator.Tests
         [Fact]
         public void Request_UnavailableElevator_Return_Failure()
         {
-            // Arrange
+            //Arrange
             var elevatorMock = new Mock<IElevator>();
-            elevatorMock.SetupGet(e => e.IsMoving).Returns(true); // Busy
+            elevatorMock.SetupGet(e => e.IsMoving).Returns(true);   //Busy
             elevatorMock.SetupGet(e => e.PassengerCount).Returns(5);
-            elevatorMock.SetupGet(e => e.Capacity).Returns(5); // Full
+            elevatorMock.SetupGet(e => e.Capacity).Returns(5);      //Full
             elevatorMock.SetupGet(e => e.CurrentFloor).Returns(1);
 
             var elevators = new List<IElevator> { elevatorMock.Object };
             var controller = new ElevatorController(elevators);
 
-            // Act
+            //Act
             var result = controller.RequestElevator(1, 5, 1);
 
-            // Assert
+            //Assert
             result.IsSuccess.Should().BeFalse();
             result.Message.Should().Be("Failed: No available elevators.");
         }
@@ -56,7 +59,7 @@ namespace DVTElevator.Tests
         [Fact]
         public void GetElevatorStatuses_Return_UpdatedStatus()
         {
-            // Arrange
+            //Arrange
             var elevatorMock = new Mock<IElevator>();
             var id = Guid.NewGuid();
 
@@ -73,10 +76,10 @@ namespace DVTElevator.Tests
             var elevators = new List<IElevator> { elevatorMock.Object };
             var controller = new ElevatorController(elevators);
 
-            // Act
+            //Act
             var statuses = controller.GetElevatorStatuses();
 
-            // Assert
+            //Assert
             statuses.Should().HaveCount(1);
             var status = statuses[0];
             status.Id.Should().Be(0);
